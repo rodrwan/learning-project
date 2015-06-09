@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="learnApp">
+<head>
+  <meta charset="utf-8" />
+  <title>First work !</title>
+
+  <link rel="stylesheet" type="text/css" href="build/assets/css/reset.min.css" />
+  <link rel="stylesheet" type="text/css" href="build/assets/css/style.min.css" />
+  <link rel="stylesheet" type="text/css" href="bower_components/flexboxgrid/dist/flexboxgrid.min.css" />
+
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="bower_components/a0-angular-storage/dist/angular-storage.min.js"></script>
+
+  <script src="app/app.js"></script>
+  <script src="app/home/home.js"></script>
+</head>
+<body>
+  <div id="pre-header" class="row center-xs end-xs">
+    <div id="logo" class="col-xs" style="border: 0px solid"></div>
+    <div id="menu" class="col-xs" style="border: 0px solid">
+      <ul class="navigation">
+        <li>Categorías</li>
+        <li>Nosotros</li>
+        <li>XX</li>
+      </ul>
+    </div>
+    <div id="user" class="col-xs" style="border: 0px solid">
+      <ul class="navigation">
+        <li><a href="#/login" title="Entrar">Entrar</a></li>
+        <li><a href="#/register" title="Registrarse">Registrarse</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="main" ui-view></div>
+  <div id="footer">
+  </div>
+</body>
+</html>

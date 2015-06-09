@@ -1,0 +1,5 @@
+TODO: pagina web.
+
+- Revisar dominio, revisar hosting.
+- Diagramar web, contenido estatico.
+-

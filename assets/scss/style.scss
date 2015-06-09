@@ -1,0 +1,162 @@
+$default-bg: #FFF;
+$btn-color: #BA007C;
+$default-letter: #000;
+$btn-letter: #FFF;
+$grey: #ccc;
+$deep-grey: #424242;
+/**** shared class ****/
+
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  background: $default-bg;
+}
+
+a:visited, a:active {
+  color: $default-letter;
+}
+
+.btn-primary {
+  color: $btn-letter;
+  background-color: $btn-color;
+}
+
+.btn-cats {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: none;
+}
+
+.btn-regis {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+}
+
+.page-section {
+  padding-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+/**** pre-header ****/
+#pre-header {
+  width: 100%;
+  height: 60px;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #ccc;
+}
+
+/**** header ****/
+#header {
+  width: 100%;
+}
+
+#header h1 {
+  font-size: 50px;
+  padding-bottom: 15px;
+  text-align: left;
+}
+
+.inner-header {
+  width: 400px;
+  margin: 0 auto;
+}
+
+/**** user ****/
+#user {
+
+}
+
+/*** MENU ***/
+.navigation {
+  margin: auto;
+  width: 500px;
+  position: relative;
+  top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.navigation li {
+  width: 120px;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  list-style-type: none;
+
+  /* top right bottom left */
+  padding: 10px 15px 15px 15px;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+}
+
+.navigation li a {
+  font-size: 16px;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  text-decoration: none;
+}
+
+.navigation li:hover {
+  background: $btn-color;
+  color: $btn-letter;
+}
+
+.navigation li:hover a {
+  color: $btn-letter;
+  text-decoration: none;
+}
+
+/*** inside ***/
+#inside {
+  width: 100%;
+  margin: auto;
+  height: 400px;
+  text-align: center;
+  background-color: #ccc;
+}
+
+#inside a {
+  color: $btn-color;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#inside div {
+  width: 800px;
+  margin: auto;
+  font-size: 35px;
+  margin-bottom: 50px;
+}
+
+/**** info-box *****/
+
+#info-box {
+  float: left;
+  width: 250px;
+  height: 400px;
+}
+
+#info-box div{
+  margin-bottom:20px;
+}
+
+#footer {
+  background-color: $deep-grey;
+  height: 300px;
+}

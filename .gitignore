@@ -1,0 +1,6 @@
+node_modules/*
+cgi-bin/*
+.sass-cache/*
+sftp-config.json
+bower_components/*
+*.DS_Store*

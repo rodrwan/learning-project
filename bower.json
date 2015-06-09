@@ -1,0 +1,12 @@
+{
+  "name": "learn-app",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-ui-router": "~0.2.15",
+    "a0-angular-storage": "~0.0.11",
+    "jquery": "~2.1.4",
+    "flexboxgrid": "~6.2.0"
+  },
+  "appPath": "app"
+}
