@@ -1,9 +1,6 @@
 (function () {
   'use strict';
 
-  function HomeController () {
-  }
-
   angular.module('learnApp.home', [
     'ui.router',
     'angular-storage'
@@ -13,9 +10,11 @@
     $stateProvider.state('home', {
       url: '/home',
       controller: 'HomeCtrl',
-      templateUrl: 'app/home/home.html'
+      templateUrl: 'build/html/home/home.html'
     });
   })
 
-  .controller('HomeCtrl', HomeController);
+  .controller('HomeCtrl', function HomeController () {
+
+  });
 })();

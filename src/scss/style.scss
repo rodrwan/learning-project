@@ -16,6 +16,14 @@ body {
   background: $default-bg;
 }
 
+a {
+    background-color: transparent
+}
+
+a:active,a:hover {
+    outline: 0
+}
+
 .btn-primary {
   color: $btn-letter;
   background-color: $btn-color;
@@ -27,6 +35,11 @@ body {
   padding-left: 15px;
   padding-right: 15px;
   text-decoration: none;
+  font-weight: bold;
+}
+.btn-cats:visited,
+.btn-cats:active {
+  color: $btn-letter;
 }
 
 .btn-regis {

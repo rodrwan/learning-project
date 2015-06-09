@@ -8,6 +8,12 @@ body {
   font-weight: 400;
   background: #FFF; }
 
+a {
+  background-color: transparent; }
+
+a:active, a:hover {
+  outline: 0; }
+
 .btn-primary {
   color: #FFF;
   background-color: #BA007C; }
@@ -17,7 +23,12 @@ body {
   padding-bottom: 10px;
   padding-left: 15px;
   padding-right: 15px;
-  text-decoration: none; }
+  text-decoration: none;
+  font-weight: bold; }
+
+.btn-cats:visited,
+.btn-cats:active {
+  color: #FFF; }
 
 .btn-regis {
   padding-top: 5px;

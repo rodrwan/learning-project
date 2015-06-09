@@ -3,14 +3,16 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
 
-    //Read the package.json (optional)
+    // Read the package.json (optional)
     pkg: grunt.file.readJSON('package.json'),
 
     // Metadata.
     meta: {
       basePath: '',
-      srcPath: 'assets/scss/',
-      deployPath: 'build/assets/css/'
+      srcPathCss: 'src/scss/',
+      srcPathJs: 'src/app/',
+      deployPath: 'build/assets/',
+      copyHtml: 'build/html/'
     },
 
     banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
@@ -18,11 +20,24 @@ module.exports = function(grunt) {
             '* Copyright (c) <%= grunt.template.today("yyyy") %> ',
 
     // Task configuration.
+    concat: {
+      options: {
+        banner: '<%= meta.banner %>'
+      },
+      dist: {
+        src: [
+          '<%= meta.srcPathJs %>app.js',
+          '<%= meta.srcPathJs %>home/home.js'
+        ],
+        dest: 'build/app/<%= pkg.name %>.js'
+      }
+    },
+
     sass: {
       dist: {
         files: {
-          '<%= meta.deployPath %>style.css': '<%= meta.srcPath %>style.scss',
-          '<%= meta.deployPath %>reset.css': '<%= meta.srcPath %>reset.scss'
+          '<%= meta.deployPath %>css/style.css': '<%= meta.srcPathCss %>style.scss',
+          '<%= meta.deployPath %>css/reset.css': '<%= meta.srcPathCss %>reset.scss'
         }
       }
     },
@@ -36,12 +51,38 @@ module.exports = function(grunt) {
       }
     },
 
+    uglify: {
+      build: {
+        files: {
+          'build/app/<%= pkg.name %>.min.js': [
+            'build/app/<%= pkg.name %>.js'
+          ]
+        }
+      }
+    },
+
+    copy: {
+      dist: {
+        files: [
+          {
+            dest: '<%= meta.copyHtml %>',
+            src: [
+              '**/home/home.html'
+            ],
+            cwd: '<%= meta.srcPathJs %>',
+            expand: true
+          }
+        ]
+      }
+    },
+
     watch: {
       scripts: {
         files: [
-          '<%= meta.srcPath %>/**/*.scss'
+          '<%= meta.srcPathCss %>**/*.scss',
+          '<%= meta.srcPathJs %>**/*.js'
         ],
-        tasks: ['sass', 'cssmin']
+        tasks: ['sass', 'cssmin', 'concat', 'copy']
       }
     }
   });
@@ -51,8 +92,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Default task.
-  grunt.registerTask('default', ['sass', 'cssmin', 'watch']);
+  grunt.registerTask('default', ['sass', 'cssmin', 'concat', 'copy', 'watch']);
 
 };
