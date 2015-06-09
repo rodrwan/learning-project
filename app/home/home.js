@@ -1,14 +1,7 @@
 (function () {
   'use strict';
 
-  function HomeController ($scope, $http, store, $state) {
-    $scope.user = {};
-
-    $scope.login = function () {
-      store.set('session', 'loginCredential');
-      store.set('userData', JSON.stringify($scope.user));
-      $state.go('profile');
-    };
+  function HomeController () {
   }
 
   angular.module('learnApp.home', [
