@@ -12,7 +12,8 @@ module.exports = function(grunt) {
       srcPathCss: 'src/scss/',
       srcPathJs: 'src/app/',
       deployPath: 'build/assets/',
-      copyHtml: 'build/html/'
+      copyHtml: 'build/html/',
+      buildApp: 'build/app/'
     },
 
     banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
@@ -29,7 +30,18 @@ module.exports = function(grunt) {
           '<%= meta.srcPathJs %>app.js',
           '<%= meta.srcPathJs %>home/home.js'
         ],
-        dest: 'build/app/<%= pkg.name %>.js'
+        dest: '<%= meta.buildApp %><%= pkg.name %>.js'
+      }
+    },
+
+    ngAnnotate: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= meta.buildApp %>',
+          src: '*.js',
+          dest: '<%= meta.buildApp %>'
+        }]
       }
     },
 
@@ -45,8 +57,8 @@ module.exports = function(grunt) {
     cssmin: {
       build: {
         files: {
-          'build/assets/css/style.min.css': 'build/assets/css/style.css',
-          'build/assets/css/reset.min.css': 'build/assets/css/reset.css'
+          '<%= meta.deployPath %>css/style.min.css': '<%= meta.deployPath %>css/style.css',
+          '<%= meta.deployPath %>css/reset.min.css': '<%= meta.deployPath %>css/reset.css'
         }
       }
     },
@@ -54,8 +66,8 @@ module.exports = function(grunt) {
     uglify: {
       build: {
         files: {
-          'build/app/<%= pkg.name %>.min.js': [
-            'build/app/<%= pkg.name %>.js'
+          '<%= meta.buildApp %><%= pkg.name %>.min.js': [
+            '<%= meta.buildApp %><%= pkg.name %>.js'
           ]
         }
       }
@@ -82,7 +94,7 @@ module.exports = function(grunt) {
           '<%= meta.srcPathCss %>**/*.scss',
           '<%= meta.srcPathJs %>**/*.js'
         ],
-        tasks: ['sass', 'cssmin', 'concat', 'copy']
+        tasks: ['sass', 'cssmin', 'concat', 'ngAnnotate', 'uglify', 'copy']
       }
     }
   });
@@ -94,8 +106,17 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-ng-annotate');
 
   // Default task.
-  grunt.registerTask('default', ['sass', 'cssmin', 'concat', 'copy', 'watch']);
+  grunt.registerTask('default', [
+    'sass',
+    'cssmin',
+    'concat',
+    'ngAnnotate',
+    'uglify',
+    'copy',
+    'watch'
+  ]);
 
 };

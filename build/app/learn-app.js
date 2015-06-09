@@ -6,11 +6,11 @@
     'angular-storage'
   ]);
 
-  app.config(function MLConfig ($urlRouterProvider) {
+  app.config(["$urlRouterProvider", function MLConfig ($urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');
-  });
+  }]);
 
-  app.run(function ($rootScope, $state, store) {
+  app.run(["$rootScope", "$state", "store", function ($rootScope, $state, store) {
     $rootScope.$on('$stateChangeStart', function (e, to) {
       if (to.data && to.data.requiresLogin) {
         if (!store.get('session')) {
@@ -19,21 +19,21 @@
         }
       }
     });
-  });
+  }]);
 
-  app.controller('AppCtrl', function ($scope) {
+  app.controller('AppCtrl', ["$scope", function ($scope) {
     $scope.$on('$routeChangeSuccess', function (e, nextRoute) {
       if (nextRoute.$$route && angular.isDefined(nextRoute.$$route.pageTitle)) {
         $scope.pageTitle = nextRoute.$$route.pageTitle;
       }
     });
-  });
+  }]);
 
-  app.filter('sanitize', function ($sce) {
+  app.filter('sanitize', ["$sce", function ($sce) {
     return function (htmlCode) {
       return $sce.trustAsHtml(htmlCode);
     };
-  });
+  }]);
 })();
 
 (function () {
@@ -44,13 +44,13 @@
     'angular-storage'
   ])
 
-  .config(function ($stateProvider) {
+  .config(["$stateProvider", function ($stateProvider) {
     $stateProvider.state('home', {
       url: '/home',
       controller: 'HomeCtrl',
       templateUrl: 'build/html/home/home.html'
     });
-  })
+  }])
 
   .controller('HomeCtrl', function HomeController () {
 
