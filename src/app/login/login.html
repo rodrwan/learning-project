@@ -1,0 +1,46 @@
+<div class="bg-login">
+  <div id="logo-login"></div>
+  <div class="post-header-login">
+      <span>ACCESO APLICACIÓN</span>
+  </div>
+
+  <div style="width:380px;margin-left:auto;margin-right:auto;border:0px solid" class="st-respo">
+  <form role="form">
+    <table border="0" style="width:100%">
+      <tbody>
+        <tr>
+            <td align="left"><span style="margin-left:35px">Email:</span></td>
+        </tr>
+        <tr>
+            <td align="center">
+                <input ng-blur="validatEmail()" type="text" name="username" ng-model="user.username" placeholder="username" required>
+            </td>
+        </tr>
+        <tr>
+            <td><span style="margin-left:35px">Password:</span></td>
+        </tr>
+        <tr>
+            <td align="center">
+              <input type="password" name="password" ng-model="user.password" placeholder="password" required>
+            </td>
+        </tr>
+        <tr><br/>
+            <td align="center">
+              <button class="btn btn-primary" ng-click="login()">Ingresar</button>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <a ng-click="reNewPass()" title="Registrarse" style="color:#f9f9f9;cursor:pointer;text-decoration:none" class="login-link">¿Olvidaste tu contraseña?</a>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <br/><a ui-sref="signup()" title="Registrarse" class="login-link">¿No te haz registrado?</a>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </form>
+</div>

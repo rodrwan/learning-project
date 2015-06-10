@@ -1,17 +1,28 @@
 $default-bg: #FFF;
-$btn-color: #BA007C;
+$btn-color: #E6019A;
+$btn-color-hover: #BA007C;
 $default-letter: #000;
 $btn-letter: #FFF;
 $grey: #E6E6E6;
 $deep-grey: #424242;
 /**** shared class ****/
 
+@font-face {
+    font-family: fontForHeadersMed;
+    src: url('../../../bower_components/fonts/Emtype Foundry - Geogrotesque-Medium.otf');
+}
+
+@font-face {
+    font-family: fontForHeadersReg;
+    src: url('../../../bower_components/fonts/Emtype Foundry - Geogrotesque-Regular.otf');
+}
+
 body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-size: 18px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: fontForHeadersReg;
   font-weight: 400;
   background: $default-bg;
 }
@@ -29,6 +40,34 @@ a:active,a:hover {
   background-color: $btn-color;
 }
 
+.btn-primary:hover {
+  color: $btn-letter;
+  background-color: $btn-color-hover;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px
+}
+
 .btn-cats {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -37,6 +76,7 @@ a:active,a:hover {
   text-decoration: none;
   font-weight: bold;
 }
+
 .btn-cats:visited,
 .btn-cats:active {
   color: $btn-letter;
@@ -56,6 +96,7 @@ a:active,a:hover {
 }
 
 /**** pre-header ****/
+
 #pre-header {
   width: 100%;
   height: 60px;
@@ -65,6 +106,7 @@ a:active,a:hover {
 }
 
 /**** header ****/
+
 #header {
   width: 100%;
   height: 400px
@@ -75,6 +117,7 @@ a:active,a:hover {
   padding-bottom: 15px;
   text-align: left;
   margin-bottom: 20px;
+  font-family: fontForHeadersMed;
 }
 
 .inner-header {
@@ -84,6 +127,7 @@ a:active,a:hover {
 }
 
 /*** logo ***/
+
 #logo {
   width: 25%;
   border: 0px solid;
@@ -91,21 +135,40 @@ a:active,a:hover {
 
 /**** main-menu ****/
 #main-menu {
-  width: 50%;
+  width: 60%;
   border: 0px solid green;
 }
 
+#main-menu > ul {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+#main-menu > ul > li {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
 /**** user ****/
+
 #user {
   width: 25%;
   border: 0px solid red;
 }
 
+#user > ul {
+  float: right;
+  margin-right: 0px;
+}
+
 /*** MENU ***/
+
 .navigation {
   margin-left: auto;
   margin-right: auto;
-  max-width: 50%;
+  max-width: 100%;
 }
 .navigation a:link, a:visited, a:active {
   color: $default-letter;
@@ -149,10 +212,11 @@ a:active,a:hover {
 }
 
 /*** inside ***/
+
 #inside {
   width: 100%;
   margin: auto;
-  height: 400px;
+  height: 300px;
   text-align: center;
   background-color: $grey;
 }
@@ -166,7 +230,7 @@ a:active,a:hover {
 }
 
 #inside div {
-  max-width: 800px;
+  max-width: 1000px;
   margin: auto;
   font-size: 35px;
   margin-top: 50px;
@@ -177,12 +241,25 @@ a:active,a:hover {
 
 #info-box {
   float: left;
-  max-width: 250px;
+  max-width: 300px;
   height: 400px;
+  margin-right: 20px;
 }
 
 #info-box div{
   margin: 40px 0px;
+}
+
+#info-box h1{
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#info-box a {
+  color: $btn-color;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: fontForHeadersMed;
 }
 
 .why-header h1{
@@ -194,4 +271,10 @@ a:active,a:hover {
 #footer {
   background-color: $deep-grey;
   height: 300px;
+  bottom: 0;
+}
+
+/***** login section *****/
+.bg-login {
+  height: 500px;
 }

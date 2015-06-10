@@ -28,7 +28,8 @@ module.exports = function(grunt) {
       dist: {
         src: [
           '<%= meta.srcPathJs %>app.js',
-          '<%= meta.srcPathJs %>home/home.js'
+          '<%= meta.srcPathJs %>home/home.js',
+          '<%= meta.srcPathJs %>login/login.js'
         ],
         dest: '<%= meta.buildApp %><%= pkg.name %>.js'
       }
@@ -79,7 +80,8 @@ module.exports = function(grunt) {
           {
             dest: '<%= meta.copyHtml %>',
             src: [
-              '**/home/home.html'
+              '**/home/home.html',
+              '**/login/login.html'
             ],
             cwd: '<%= meta.srcPathJs %>',
             expand: true
@@ -94,7 +96,14 @@ module.exports = function(grunt) {
           '<%= meta.srcPathCss %>**/*.scss',
           '<%= meta.srcPathJs %>**/*.js'
         ],
-        tasks: ['sass', 'cssmin', 'concat', 'ngAnnotate', 'uglify', 'copy']
+        tasks: [
+          'sass',
+          'cssmin',
+          'concat',
+          'ngAnnotate',
+          'uglify',
+          'copy'
+        ]
       }
     }
   });

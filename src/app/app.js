@@ -3,6 +3,7 @@
 
   var app = angular.module('learnApp', [
     'learnApp.home',
+    'learnApp.login',
     'angular-storage'
   ]);
 
