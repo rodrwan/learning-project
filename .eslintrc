@@ -24,8 +24,8 @@
     "quote-props": [2, "as-needed"]
   },
   "env": {
-    "browser": true
-    "angular": false,
-    "$": false
+    "browser": true,
+    "jquery": true,
+    "node": true
   }
 }

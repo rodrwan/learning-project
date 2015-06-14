@@ -8,15 +8,8 @@
 
       <p>{{doc.data}}</p>
       <br/>
-      <div ng-show="doc.source == 'local'">
-      <video width="400" height="240" controls>
-        <source src="{{doc.video}}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      </div>
-      <div ng-show="doc.source == 'youtube'">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/1Bhmz0g9CsQ" frameborder="0" allowfullscreen></iframe>
-      </div>
+      <!-- <div ng-bind-html="doc.video"></div> -->
+      <div id="player" ts-video-player video="{{doc.videoId}}" type="{{doc.type}}"></div>
     </div>
     <div class="right">
       Lorem ipsum dolor.
