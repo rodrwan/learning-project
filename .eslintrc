@@ -23,11 +23,9 @@
     "func-style": [2, "declaration"],
     "quote-props": [2, "as-needed"]
   },
-  "globals": {
-    "angular": false,
-    "$": false
-  },
   "env": {
     "browser": true
+    "angular": false,
+    "$": false
   }
 }

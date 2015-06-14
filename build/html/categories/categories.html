@@ -1,0 +1,13 @@
+<div id="categories">
+  <h1>Categorías</h1>
+  <div>Elige una categoria para explorar los cursos que podrás estudiar, o ver los
+cursos que vienen.</div>
+
+  <div id="cats">
+    <ul>
+      <li ng-repeat="cat in categories">
+        <a href="#{{cat.link}}" title="{{cat.name}}">{{cat.name}}</a>
+      </li>
+    </ul>
+  </div>
+</div>

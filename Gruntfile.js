@@ -29,7 +29,9 @@ module.exports = function(grunt) {
         src: [
           '<%= meta.srcPathJs %>app.js',
           '<%= meta.srcPathJs %>home/home.js',
-          '<%= meta.srcPathJs %>login/login.js'
+          '<%= meta.srcPathJs %>login/login.js',
+          '<%= meta.srcPathJs %>categories/categories.js',
+          '<%= meta.srcPathJs %>documentaries/documentaries.js'
         ],
         dest: '<%= meta.buildApp %><%= pkg.name %>.js'
       }
@@ -81,7 +83,10 @@ module.exports = function(grunt) {
             dest: '<%= meta.copyHtml %>',
             src: [
               '**/home/home.html',
-              '**/login/login.html'
+              '**/login/login.html',
+              '**/categories/categories.html',
+              '**/documentaries/documentaries.html',
+              '**/documentaries/documental.html',
             ],
             cwd: '<%= meta.srcPathJs %>',
             expand: true
@@ -117,8 +122,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-ng-annotate');
 
-  // Default task.
-  grunt.registerTask('default', [
+  grunt.registerTask('build', [
     'sass',
     'cssmin',
     'concat',
@@ -127,5 +131,8 @@ module.exports = function(grunt) {
     'copy',
     'watch'
   ]);
-
+  // Default task.
+  grunt.registerTask('default', [
+    'build',
+  ]);
 };

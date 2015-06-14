@@ -4,6 +4,8 @@
   var app = angular.module('learnApp', [
     'learnApp.home',
     'learnApp.login',
+    'learnApp.categories',
+    'learnApp.documentaries',
     'angular-storage'
   ]);
 

@@ -1,0 +1,26 @@
+<div id="documental">
+  <div class="img-doc">
+    <img src="build/assets/img/doc{{doc.id}}/doc{{doc.id}}.png" alt="{{doc.title}}" width="640" height="230"/>
+  </div>
+  <div id="content">
+    <div class="left">
+      <h1>{{doc.title}}</h1>
+
+      <p>{{doc.data}}</p>
+      <br/>
+      <div ng-show="doc.source == 'local'">
+      <video width="400" height="240" controls>
+        <source src="{{doc.video}}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      </div>
+      <div ng-show="doc.source == 'youtube'">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/1Bhmz0g9CsQ" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="right">
+      Lorem ipsum dolor.
+    </div>
+  </div>
+  <a href="#/documentaries" title="Documentales" class="btn-cats btn-primary">Volver a los documentales</a>
+</div>
