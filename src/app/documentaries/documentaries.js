@@ -3,8 +3,7 @@
 
   angular.module('learnApp.documentaries', [
     'ui.router',
-    'angular-storage',
-    'ngSanitize'
+    'angular-storage'
   ])
 
   .config(function ($stateProvider) {
@@ -80,37 +79,43 @@
       title: 'Como Steve Jobs cambio el mundo.',
       data: 'En este documental se repasa la vida, la filosofía y los logros de Steve Jobs creando una de las compañias más rentables, Apple.',
       videoId: '1Bhmz0g9CsQ',
-      type: 'youtube'
+      type: 'youtube',
+      time: '43,08'
     }, {
       id: 2,
       title: 'Helvética',
       data: 'Documental sobre el diseño gráfico, la tipografía y en general sobre la cultura visual. La película se centra en la popular fuente tipográfica Helvética, que en el año 2007 hizo su 50 aniversario, e incluye entrevistas con los mejores nombres del mundo del diseño como Erik Spiekermann, Matthew Carter, Massino Vignelli, Wim Crouwel,, Hernmann Zapf, Neville Brody, Stefan Sagmeister. Con motivo del 50 aniversario de esta tipografía, Gary Hustwit ha dirigido y producido una película documental que explora el uso de la tipografía en los espacios urbanos y aporta la reflexiones de renombramientos diseñadores acerca de su trabajo, el proceso creativo y las elecciones estéticas detrás de su uso.',
       videoId: 'doc2',
-      type: 'local'
+      type: 'local',
+      time: '90,42'
     }, {
       id: 3,
       title: 'Objectified',
       data: 'Documental sobre el diseño industrial. En él se examinan los objetos y el proceso creativo de quien los diseña: desde los cepillos de dientes hasta los gadgets más sofisticados.',
       videoId: 'oqPGscXtTg8',
-      type: 'youtube'
+      type: 'youtube',
+      time: '75,41'
     }, {
       id: 4,
       title: 'Estos tíos exóticos de barcelona',
       data: 'Creado hace algunos años como proyecto de titulo, este documental trata sobre la situación actual del diseño en Barcelona. En él, varios profesionales del diseño dan sus opiniones sobre la evolución del sector en esta ciudad y lo que esperan que ocurra en el futuro.',
       videoId: 'doc4',
-      type: 'local'
+      type: 'local',
+      time: '47,25'
     }, {
       id: 5,
       title: '¿Qué es el diseño gráfico?',
       data: 'Documental argentino en el que catedráticos, profesionales y expertos intentan definir “diseño gráfico”. Surgen preguntas interesantes y es un documental que nos hará reflexionar.',
       videoId: 'doc5',
-      type: 'local'
+      type: 'local',
+      time: '55,50'
     }, {
       id: 6,
       title: 'No logo',
       data: 'Documenta basado en el best-seller de Naomi Klein del mismo nombre. Trata del impacto de las marcas en la sociedad',
       videoId: 'doc6',
-      type: 'local'
+      type: 'local',
+      time: '40,38'
     }];
 
     $scope.doc = documents[$stateParams.id - 1];

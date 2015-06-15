@@ -6,6 +6,7 @@ $btn-letter: #FFF;
 $grey: #E6E6E6;
 $deep-grey: #424242;
 $border-color: #bdc3c7;
+$border-cloud: #D0D5D8;
 /**** shared class ****/
 
 @font-face {
@@ -357,7 +358,7 @@ a:active,a:hover {
 #documentaries > #portada {
   width: 100%;
   height: 300px;
-  background: url(../img/doc_port.jpg) 0px -336px;
+  background: url(../img/documentaries/doc_port.jpg) 0px -336px;
   background-size: 100%;
   background-repeat: no-repeat;
   margin-bottom: 30px;
@@ -429,13 +430,15 @@ a:active,a:hover {
 #documentaries > #docs #info > h3 {
   font-weight: bold;
   font-family: fontForHeadersBol;
-  font-size: 20px
+  font-size: 20px;
+  text-transform: uppercase;
 }
 #documentaries > #docs #info > h4 {
   font-weight: bold;
   font-family: fontForHeadersBol;
   color: $border-color;
   font-size: 16px;
+  text-transform: uppercase;
 }
 
 #documentaries > #docs #info > .brief {
@@ -509,6 +512,12 @@ a:active,a:hover {
   vertical-align:top;
   width: 200px;
   float: right;
+}
+
+#documental > #content > .right li {
+  border-top: 1px solid $border-cloud;
+  border-bottom: 1px solid $border-cloud;
+  padding: 10px 0;
 }
 
 #documental > a {

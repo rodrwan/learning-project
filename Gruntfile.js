@@ -85,8 +85,10 @@ module.exports = function(grunt) {
               '**/home/home.html',
               '**/login/login.html',
               '**/categories/categories.html',
+              '**/categories/category.html',
+              '**/categories/resource.html',
               '**/documentaries/documentaries.html',
-              '**/documentaries/documental.html',
+              '**/documentaries/documental.html'
             ],
             cwd: '<%= meta.srcPathJs %>',
             expand: true

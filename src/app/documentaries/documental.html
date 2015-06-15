@@ -1,6 +1,6 @@
 <div id="documental">
   <div class="img-doc">
-    <img src="build/assets/img/doc{{doc.id}}/doc{{doc.id}}.png" alt="{{doc.title}}" width="640" height="230"/>
+    <img src="build/assets/img/documentaries/doc{{doc.id}}/doc{{doc.id}}.png" alt="{{doc.title}}" width="640" height="230"/>
   </div>
   <div id="content">
     <div class="left">
@@ -12,7 +12,9 @@
       <div id="player" ts-video-player video="{{doc.videoId}}" type="{{doc.type}}"></div>
     </div>
     <div class="right">
-      Lorem ipsum dolor.
+      <ul>
+        <li>{{doc.time}} Minutos</li>
+      </ul>
     </div>
   </div>
   <a href="#/documentaries" title="Documentales" class="btn-cats btn-primary">Volver a los documentales</a>
