@@ -2,12 +2,12 @@
   <h1>Categorías</h1>
   <div>Elige una categoria para explorar los cursos que podrás estudiar, o ver los
 cursos que vienen.</div>
-
   <div id="cats">
     <ul>
-      <li ng-repeat="cat in categories">
-        <img src="build/assets/img/categories/{{cat.id}}/{{cat.id}}.png" alt="{{cat.title}}"/>
-        <a href="#/categories/{{cat.id}}" title="{{cat.title}}">{{cat.title}}</a>
+      <li ng-repeat="cat in categories" class="{{cat.id}}">
+        <a href="#/categories/{{cat.id}}" title="{{cat.title}}">
+          {{cat.title}}
+        </a>
       </li>
     </ul>
   </div>

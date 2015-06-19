@@ -70,7 +70,6 @@
         brief: 'Basado en el best-seller de Naomi Klein, trata del impacto que tienen las marcas en la sociedad.',
         time: '40,38'
       }];
-
   })
 
   .controller('DocCtrl', function DocController ($scope, $stateParams) {
@@ -112,7 +111,7 @@
     }, {
       id: 6,
       title: 'No logo',
-      data: 'Documenta basado en el best-seller de Naomi Klein del mismo nombre. Trata del impacto de las marcas en la sociedad',
+      data: 'Documental basado en el best-seller de Naomi Klein del mismo nombre. Trata del impacto de las marcas en la sociedad',
       videoId: 'doc6',
       type: 'local',
       time: '40,38'

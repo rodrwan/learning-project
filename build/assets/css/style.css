@@ -8,6 +8,9 @@
 @font-face {
   font-family: fontForHeadersBol;
   src: url("../../../bower_components/fonts/Emtype Foundry - Geogrotesque-Bold.otf"); }
+html {
+  height: 100%; }
+
 body {
   box-sizing: border-box;
   padding: 0;
@@ -15,7 +18,8 @@ body {
   font-size: 18px;
   font-family: fontForHeadersReg;
   font-weight: 400;
-  background: #FFF; }
+  background: #FFF;
+  height: 100%; }
 
 a {
   background-color: transparent; }
@@ -109,6 +113,14 @@ a:active, a:hover {
   margin: auto;
   margin-top: 80px; }
 
+#wrapper {
+  min-height: 100%;
+  position: relative; }
+
+/**** main ***/
+#main {
+  padding-bottom: 200px; }
+
 /*** logo ***/
 #logo {
   width: 25%;
@@ -130,7 +142,7 @@ a:active, a:hover {
   text-align: center;
   font-weight: bold;
   list-style-type: none;
-  padding: 10px 15px 15px;
+  padding: 5px 10px 10px;
   -webkit-transition: all .3s ease-in;
   -moz-transition: all .3s ease-in;
   -o-transition: all .3s ease-in;
@@ -261,8 +273,11 @@ a:active, a:hover {
 
 #footer {
   background-color: #424242;
+  width: 100%;
   height: 200px;
-  bottom: 0; }
+  position: absolute;
+  bottom: 0;
+  left: 0; }
 
 /***** login section *****/
 .bg-login {
@@ -276,10 +291,131 @@ a:active, a:hover {
   text-align: center; }
 
 #categories > div {
-  max-width: 1000px;
+  width: 100%;
   margin: 50px auto;
   font-size: 20px;
   text-align: center; }
+
+#categories > #cats > ul {
+  width: 50%;
+  margin: 0 auto; }
+
+#categories > #cats > ul > li.history {
+  margin: 10px;
+  width: 170px;
+  height: 150px;
+  background: url(../img/categories/history/history.jpg);
+  background-size: cover;
+  position: relative; }
+
+#categories > #cats > ul > li.history > a {
+  color: #FFF;
+  height: 150px;
+  padding: 0px 18px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  text-shadow: 2px 1px #2c3e50;
+  background: rgba(189, 195, 199, 0.5); }
+
+#category {
+  clear: both;
+  width: 100%; }
+
+#category > #portada.history {
+  width: 100%;
+  height: 300px;
+  background: url(../img/categories/history/history.jpg) 0px -336px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-bottom: 30px; }
+
+#category > #portada > h1 {
+  color: #FFF;
+  font-size: 40px;
+  font-weight: bold;
+  padding: 60px 0px;
+  text-align: center; }
+
+#category > #portada > div {
+  width: 100%;
+  margin: 0 auto;
+  color: #FFF;
+  font-size: 20px;
+  text-align: center; }
+
+#category > #cats {
+  width: 70%;
+  margin: 0 auto; }
+
+#category > #cats > h2 {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin: 45px auto; }
+
+#category > #cats ul > li > div.imgcont-cat {
+  vertical-align: top;
+  width: 300px;
+  height: 200px;
+  display: inline-block; }
+
+/* resize images */
+.imgcont-cat img {
+  width: 100%;
+  height: 100%;
+  background-position: -100px -100px; }
+
+#category > #cats > ul {
+  width: 100%;
+  margin: 0 auto; }
+
+#category > #cats > ul > li {
+  text-align: center;
+  font-weight: 700;
+  list-style-type: none;
+  padding: 10px 15px 15px;
+  margin-bottom: 40px; }
+
+#category > #cats #info {
+  vertical-align: top;
+  display: inline-block;
+  text-align: left;
+  height: 200px;
+  margin-left: 15px; }
+
+#category > #cats #info > h3 {
+  font-weight: bold;
+  font-family: fontForHeadersBol;
+  font-size: 16px;
+  text-transform: uppercase; }
+
+#category > #cats #info > h4 {
+  font-weight: bold;
+  font-family: fontForHeadersBol;
+  color: #bdc3c7;
+  font-size: 16px;
+  text-transform: uppercase; }
+
+#category > #cats #info > .brief {
+  width: 400px;
+  font-size: 16px; }
+
+#category > #cats .link {
+  border-top: 1px solid #bdc3c7;
+  border-bottom: 1px solid #bdc3c7;
+  padding: 15px 0;
+  width: 100%;
+  margin-top: 5px; }
+
+#category > #cats #info > .link > .time {
+  display: inline-block; }
+
+#category > #cats #info > .link > a {
+  margin-right: 0px;
+  right: 0px;
+  float: right;
+  margin-top: -10px; }
 
 /******** documentaries *******/
 #documentaries {
@@ -432,5 +568,12 @@ a:active, a:hover {
   width: 220px;
   margin: 0 auto;
   font-family: fontForHeadersBol; }
+
+.active {
+  color: #FFF !important;
+  background-color: #E6019A !important; }
+
+.active a {
+  color: #FFF !important; }
 
 /*# sourceMappingURL=style.css.map */

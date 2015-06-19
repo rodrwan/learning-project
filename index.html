@@ -2,7 +2,7 @@
 <html ng-app="learnApp">
 <head>
   <meta charset="utf-8" />
-  <title>First work !</title>
+  <title>Picnic!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="Shortcut Icon" type="image/x-icon" href="build/assets/img/favicon.ico">
@@ -17,28 +17,30 @@
   <script src="build/app/learn-app.min.js"></script>
 </head>
 <body>
-  <div id="pre-header" class="row center-xs end-xs">
-    <div id="logo" class="col-xs-2"></div>
-    <div id="main-menu" class="col-xs-8">
-      <ul>
-        <li><a ui-sref="home()" title="Inicio">Inicio</a></li>
-        <li><a href="#/categories" title="Categorías">Categorías</a></li>
-        <li><a href="#/documentaries" title="Documentales">Documentales</a></li>
-        <li><a href="#/news" title="Novedades">Novedades</a></li>
-        <li><a href="#/about" title="Nosotros">Nosotros</a></li>
-      </ul>
+  <div id="wrapper">
+    <div id="pre-header" class="row center-xs end-xs">
+      <div id="logo" class="col-xs-2"></div>
+      <div id="main-menu" class="col-xs-8">
+        <ul>
+          <li><a ui-sref="home()" title="Inicio">Inicio</a></li>
+          <li><a href="#/categories" title="Categorías">Categorías</a></li>
+          <li><a href="#/documentaries" title="Documentales">Documentales</a></li>
+          <li><a href="#/news" title="Novedades">Novedades</a></li>
+          <li><a href="#/about" title="Nosotros">Nosotros</a></li>
+        </ul>
+      </div>
+      <div id="user" class="col-xs-2">
+        <ul class="navigation">
+          <li><a ui-sref="login()" title="Entrar">Entrar</a></li>
+          <li class="active"><a href="#/register" title="Registrarse">Registrarse</a></li>
+        </ul>
+      </div>
     </div>
-    <div id="user" class="col-xs-2">
-      <ul class="navigation">
-        <li><a ui-sref="login()" title="Entrar">Entrar</a></li>
-        <li><a href="#/register" title="Registrarse">Registrarse</a></li>
-      </ul>
+
+    <div id="main" ui-view></div>
+
+    <div id="footer">
     </div>
-  </div>
-
-  <div id="main" ui-view></div>
-
-  <div id="footer">
   </div>
   <script src="http://www.youtube.com/player_api"></script>
 </body>

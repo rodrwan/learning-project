@@ -24,14 +24,6 @@
     });
   });
 
-  app.controller('AppCtrl', function ($scope) {
-    $scope.$on('$routeChangeSuccess', function (e, nextRoute) {
-      if (nextRoute.$$route && angular.isDefined(nextRoute.$$route.pageTitle)) {
-        $scope.pageTitle = nextRoute.$$route.pageTitle;
-      }
-    });
-  });
-
   app.filter('sanitize', function ($sce) {
     return function (htmlCode) {
       return $sce.trustAsHtml(htmlCode);

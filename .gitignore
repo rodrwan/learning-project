@@ -6,3 +6,4 @@ bower_components/*
 *.DS_Store*
 resourses/*
 build/assets/video/*
+learn-app/*
