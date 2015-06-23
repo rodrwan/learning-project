@@ -1,14 +1,17 @@
 <div id="category" ui-view>
   <div id="portada" class="{{category}}">
-    <h1>Historia y Teoría</h1>
-    <div>Descubre videos de historia del arte, acotencimientos historicos de los tiempos del diseño, y todo sobre cultura.</div>
+    <h1>{{ meta.sectionTitle }}</h1>
+    <div>{{ meta.description }}</div>
   </div>
-  <div id="cats" ng-repeat="category in categories">
-    <h2>{{category.subTitle}}</h2>
+  <div id="loading" ng-hide="loadingIsDone"></div>
+  <div id="cats" ng-repeat="cate in categories">
+    <h2>{{cate.subTitle}}</h2>
     <ul>
-      <li ng-repeat="topic in category.topics">
+      <li ng-repeat="topic in cate.topics">
         <div class="imgcont-cat">
-          <img src="build/assets/img/categories/{{topic.thumbnail}}" alt="{{topic.title}}"/>
+          <a href="#/categories/{{category}}/{{topic.id}}" title="{{topic.title}}" class="btn-cats btn-primary">
+            <img src="build/assets/img/categories/{{topic.thumbnail}}" alt="{{topic.title}}"/>
+          </a>
         </div>
         <div id="info">
           <h3>{{topic.title}}</h3>
@@ -17,10 +20,11 @@
           <p class="brief">{{topic.brief}}</p>
           <div class="link">
             <p class="time">{{topic.time}} Minutos</p>
-            <a href="#/categories/{{topic.id}}" title="{{topic.title}}" class="btn-cats btn-primary">Más</a>
+            <a href="#/categories/{{category}}/{{topic.id}}" title="{{topic.title}}" class="btn-cats btn-primary">Más</a>
           </div>
         </div>
       </li>
     </ul>
   </div>
+  <a href="#/categories" title="Categorías" class="btn-cats btn-primary">Ver todas las categorías</a>
 </div>

@@ -2,6 +2,7 @@
   <h1>Categorías</h1>
   <div>Elige una categoria para explorar los cursos que podrás estudiar, o ver los
 cursos que vienen.</div>
+  <div id="loading" ng-hide="loadingIsDone"></div>
   <div id="cats">
     <ul>
       <li ng-repeat="cat in categories" class="{{cat.id}}">

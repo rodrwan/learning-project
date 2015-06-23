@@ -31,7 +31,9 @@ module.exports = function(grunt) {
           '<%= meta.srcPathJs %>home/home.js',
           '<%= meta.srcPathJs %>login/login.js',
           '<%= meta.srcPathJs %>categories/categories.js',
-          '<%= meta.srcPathJs %>documentaries/documentaries.js'
+          '<%= meta.srcPathJs %>documentaries/documentaries.js',
+          '<%= meta.srcPathJs %>signup/signup.js',
+          '<%= meta.srcPathJs %>news/news.js'
         ],
         dest: '<%= meta.buildApp %><%= pkg.name %>.js'
       }
@@ -88,7 +90,9 @@ module.exports = function(grunt) {
               '**/categories/category_list.html',
               '**/categories/resource.html',
               '**/documentaries/documentaries.html',
-              '**/documentaries/documental.html'
+              '**/documentaries/documental.html',
+              '**/signup/signup.html',
+              '**/news/news.html'
             ],
             cwd: '<%= meta.srcPathJs %>',
             expand: true
@@ -135,6 +139,6 @@ module.exports = function(grunt) {
   ]);
   // Default task.
   grunt.registerTask('default', [
-    'build',
+    'build'
   ]);
 };

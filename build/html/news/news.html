@@ -1,0 +1,15 @@
+<div id="categories">
+  <h1>Novedades</h1>
+  <div>Encuentra las exposiciones que mas te interesan y los eventos relacionados con el diseño y el arte.</div>
+  <div id="cats">
+    <ul>
+      <li ng-repeat="news in arrNews">
+        <a href="#/news/{{news.id}}" title="{{news.title}}">
+          {{news.title}}
+          <img src="build/assets/img/news/news{{news.id}}.jpg" alt="{{news.title}}" />
+        </a>
+        <div class="resumen"></div>
+      </li>
+    </ul>
+  </div>
+</div>
