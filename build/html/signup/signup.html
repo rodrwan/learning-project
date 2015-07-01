@@ -1,29 +1,29 @@
 <div id="signup">
   <h1>Registro</h1>
   <div id="form">
-    <form action="" method="POST">
+    <form role="form">
       <table>
         <tr>
           <td>
             <span class="fontawesome-user"></span>
-            <input type="text" required placeholder="Nombre de usuario" autocomplete="off">
+            <input type="text" ng-model="user.username" required placeholder="Nombre de usuario" autocomplete="off">
           </td>
         </tr>
         <tr>
           <td>
             <span class="fontawesome-envelope-alt"></span>
-            <input type="text" id="email" required placeholder="Correo" autocomplete="off">
+            <input type="text" ng-model="user.email" id="email" required placeholder="Correo" autocomplete="off">
           </td>
         </tr>
         <tr>
           <td>
             <span class="fontawesome-lock"></span>
-            <input type="password" name="password" id="password" required placeholder="Contraseña" autocomplete="off">
+            <input type="password" ng-model="user.password" name="password" id="password" required placeholder="Contraseña" autocomplete="off">
           </td>
         </tr>
         <tr>
           <td align="center">
-            <input type="submit" class="btn" value="Registrar" title="Registra tu cuenta">
+            <input type="submit" class="btn" value="Registrar" ng-click="signup()" title="Registra tu cuenta">
           </td>
         </tr>
       </table>

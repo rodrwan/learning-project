@@ -12,7 +12,9 @@
           <img src="build/assets/img/documentaries/{{doc.thumbnail}}" alt="{{doc.title}}"/>
         </div>
         <div id="info">
-          <h3>{{doc.title}}</h3>
+          <h3>
+            <a href="#/documentaries/{{doc.id}}" title="{{doc.title}}">{{doc.title}}</a>
+          </h3>
           <h4>{{doc.subTitle}}</h4>
           <br/>
           <p class="brief">{{doc.brief}}</p>

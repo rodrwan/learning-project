@@ -5,11 +5,12 @@ cursos que vienen.</div>
   <div id="loading" ng-hide="loadingIsDone"></div>
   <div id="cats">
     <ul>
-      <li ng-repeat="cat in categories" class="{{cat.id}}">
-        <a href="#/categories/{{cat.id}}" title="{{cat.title}}">
-          {{cat.title}}
-        </a>
-      </li>
+      <a ng-repeat="cat in categories" href="#/categories/{{cat.id}}" title="{{cat.title}}">
+        <li  class="{{cat.id}}">
+          <div id="icon-{{cat.id}}"></div>
+          <p>{{cat.title}}</p>
+        </li>
+      </a>
     </ul>
   </div>
 </div>

@@ -1,30 +1,39 @@
 <div id="category" ui-view>
   <div id="portada" class="{{category}}">
-    <h1>{{ meta.sectionTitle }}</h1>
+    <h1>
+      <span id="icon-p-{{category}}"></span>
+      <span id="text">{{ meta.sectionTitle }}</span>
+    </h1>
     <div>{{ meta.description }}</div>
+
   </div>
   <div id="loading" ng-hide="loadingIsDone"></div>
   <div id="cats" ng-repeat="cate in categories">
-    <h2>{{cate.subTitle}}</h2>
-    <ul>
-      <li ng-repeat="topic in cate.topics">
-        <div class="imgcont-cat">
-          <a href="#/categories/{{category}}/{{topic.id}}" title="{{topic.title}}" class="btn-cats btn-primary">
-            <img src="build/assets/img/categories/{{topic.thumbnail}}" alt="{{topic.title}}"/>
-          </a>
-        </div>
-        <div id="info">
-          <h3>{{topic.title}}</h3>
-          <h4>{{topic.subTitle}}</h4>
-          <br/>
-          <p class="brief">{{topic.brief}}</p>
-          <div class="link">
-            <p class="time">{{topic.time}} Minutos</p>
-            <a href="#/categories/{{category}}/{{topic.id}}" title="{{topic.title}}" class="btn-cats btn-primary">Más</a>
+    <div ng-repeat="cat in cate">
+      <h2>{{cat.subTitle}}</h2>
+
+      <ul>
+        <li ng-repeat="c in cat.topics">
+          <div class="imgcont-cat">
+            <a href="#/categories/{{category}}/{{c.id}}" title="{{c.title}}" class="btn-cats btn-primary">
+              <img src="build/assets/img/categories/{{c.thumbnail}}" alt="{{c.title}}"/>
+            </a>
           </div>
-        </div>
-      </li>
-    </ul>
+          <div id="info">
+            <h3>
+              <a href="#/categories/{{category}}/{{c.id}}" title="{{c.title}}">{{c.title}}</a>
+            </h3>
+            <h4>{{c.subTitle}}</h4>
+            <br/>
+            <p class="brief">{{c.brief}}</p>
+            <div class="link">
+              <p class="time">{{c.time}} Minutos</p>
+              <a href="#/categories/{{category}}/{{c.id}}" title="{{c.title}}" class="btn-cats btn-primary">Más</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
   <a href="#/categories" title="Categorías" class="btn-cats btn-primary">Ver todas las categorías</a>
 </div>

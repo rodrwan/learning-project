@@ -1,15 +1,14 @@
-<div id="categories">
+<div id="news" ui-view>
   <h1>Novedades</h1>
   <div>Encuentra las exposiciones que mas te interesan y los eventos relacionados con el diseño y el arte.</div>
-  <div id="cats">
+  <div id="newslist">
     <ul>
-      <li ng-repeat="news in arrNews">
-        <a href="#/news/{{news.id}}" title="{{news.title}}">
-          {{news.title}}
-          <img src="build/assets/img/news/news{{news.id}}.jpg" alt="{{news.title}}" />
-        </a>
-        <div class="resumen"></div>
-      </li>
+      <a ng-repeat="news in arrNews" href="#/{{news.url}}" title="{{news.title}}">
+        <li class="{{news.id}}">
+          <div id="icon-{{news.id}}"></div>
+          <p>{{news.title}}</p>
+        </li>
+      </a>
     </ul>
   </div>
 </div>

@@ -8,7 +8,7 @@
       <h3>{{meta.sub_title}}</h3>
 
       <div ng-repeat="topic in topics">
-        <h3>{{topic.content_title}}</h3>
+        <h3 ng-show="topic.content">{{topic.content_title}}</h3>
         <p ng-bind-html="topic.content"></p>
         <br/>
         <h3>Ver video</h3>

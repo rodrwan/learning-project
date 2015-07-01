@@ -1,9 +1,10 @@
 node_modules/*
 cgi-bin/*
 .sass-cache/*
-sftp-config.json
 bower_components/*
 *.DS_Store*
 resourses/*
 build/assets/video/*
 learn-app/*
+sftp-config.json
+deployment-config.json

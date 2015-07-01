@@ -1,7 +1,8 @@
-(function () {
+  (function () {
   'use strict';
 
   var app = angular.module('learnApp', [
+    'ui.router',
     'learnApp.home',
     'learnApp.login',
     'learnApp.categories',
@@ -11,17 +12,31 @@
     'angular-storage'
   ]);
 
-  app.config(function MLConfig ($urlRouterProvider) {
+  app.config(function MLConfig ($stateProvider, $urlRouterProvider, $httpProvider) {
     $urlRouterProvider.otherwise('/home');
+    // $httpProvider.defaults.useXDomain = true;
+    // delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    // $httpProvider.defaults.headers.post['Content-Type'] = 'application/json';
+    $stateProvider.state('main', {
+      url: '/',
+      controller: 'Apptrl',
+      templateUrl: ''
+    });
   });
 
   app.run(function ($rootScope, $state, store) {
     $rootScope.$on('$stateChangeStart', function (e, to) {
       if (to.data && to.data.requiresLogin) {
         if (!store.get('session')) {
-          e.preventDefault();
-          $state.go('login');
+          $rootScope.login = false;
         }
+      }
+    });
+    $rootScope.$watch('username', function (newVal, oldVal) {
+      console.log('new value:' + newVal);
+      console.log('old value:' + oldVal);
+      if (!oldVal) {
+        $rootScope.username = store.get('username');
       }
     });
   });
@@ -32,8 +47,27 @@
     };
   });
 
-  app.constant('API_URL', 'http://learn-app.herokuapp.com/api');
+  // app.constant('API_URL', 'http://learn-app.herokuapp.com/api');
+  app.constant('API_URL', 'http://api.picnicgrafico.com/api');
   // app.constant('API_URL', 'http://localhost:8080/api');
+
+  app.controller('AppCtrl', function AppController ($rootScope, $scope, store) {
+    var session = store.get('session');
+    if (session) {
+      console.log('sess: ' + session);
+      $rootScope.login = true;
+      $rootScope.username = store.get('username');
+    }
+
+    $scope.logout = function () {
+      $rootScope.login = false;
+      $rootScope.username = undefined;
+
+      store.remove('username');
+      store.remove('session_token');
+      store.remove('session');
+    };
+  });
 
   app.factory('YouTubeLoader', function ($q, $window) {
     var tag = document.createElement('script');

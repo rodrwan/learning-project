@@ -1,4 +1,6 @@
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
+/*#E6019A;*/
+/*#BA007C;*/
 /**** shared class ****/
 @font-face {
   font-family: fontForHeadersMed;
@@ -33,11 +35,11 @@ a:active, a:hover {
 
 .btn-primary {
   color: #FFF;
-  background-color: #E6019A; }
+  background-color: #e52c20; }
 
 .btn-primary:hover {
   color: #FFF;
-  background-color: #BA007C; }
+  background-color: rgba(233, 84, 41, 0.9); }
 
 #responsive-menu {
   display: none; }
@@ -106,7 +108,8 @@ a:active, a:hover {
 /**** header ****/
 #header {
   width: 100%;
-  height: 400px; }
+  height: 300px;
+  padding-top: 30px !important; }
 
 #header h1 {
   font-size: 50px;
@@ -116,9 +119,10 @@ a:active, a:hover {
   font-family: fontForHeadersMed; }
 
 .inner-header {
-  width: 400px;
-  margin: auto;
-  margin-top: 80px; }
+  width: 1000px;
+  height: 100%;
+  background: url(../img/portada.jpg) no-repeat;
+  background-size: 100%; }
 
 #wrapper {
   min-height: 100%;
@@ -130,8 +134,25 @@ a:active, a:hover {
 
 /*** logo ***/
 #logo {
-  width: 25%;
-  border: 0px solid; }
+  width: 100%;
+  border: 0 solid;
+  background: url(../img/Logo2.png) no-repeat;
+  position: absolute;
+  background-size: 25% !important;
+  height: 81px;
+  top: 10px;
+  left: 100px; }
+
+#logo-resp {
+  width: 100%;
+  border: 0 solid;
+  background: url(../img/Logo2.png) no-repeat;
+  background-size: 25%;
+  height: 81px;
+  top: -52px;
+  left: 125px;
+  display: none;
+  position: absolute; }
 
 /**** main-menu ****/
 #main-menu {
@@ -171,7 +192,7 @@ a:active, a:hover {
   font-family: fontForHeadersMed; }
 
 #main-menu > ul > li:hover {
-  background: #E6019A;
+  background: #e52c20;
   color: #FFF; }
 
 #main-menu > ul > li:hover a {
@@ -218,7 +239,7 @@ a:active, a:hover {
   font-family: fontForHeadersMed; }
 
 .navigation li:hover {
-  background: #E6019A;
+  background: #e52c20;
   color: #FFF; }
 
 .navigation li:hover a {
@@ -237,11 +258,12 @@ a:active, a:hover {
   background-color: #E6E6E6; }
 
 #inside a {
-  color: #E6019A;
+  color: #e52c20;
   text-decoration: none;
   font-weight: bold;
   cursor: pointer;
-  font-size: 20px; }
+  font-size: 20px;
+  font-family: fontForHeadersBol; }
 
 #inside div {
   max-width: 1000px;
@@ -259,14 +281,14 @@ a:active, a:hover {
   margin-bottom: 50px; }
 
 #info-box div {
-  margin: 40px 0px; }
+  margin: 40px auto; }
 
 #info-box h1 {
   margin-bottom: 20px;
   font-weight: bold; }
 
 #info-box a {
-  color: #E6019A;
+  color: #e52c20;
   text-decoration: none;
   font-weight: bold;
   font-family: fontForHeadersMed; }
@@ -313,38 +335,38 @@ a:active, a:hover {
   width: 800px;
   margin: 0 auto; }
 
-#categories > #cats > ul > li {
+#categories > #cats > ul > a {
   display: inline-block;
-  vertical-align: top; }
-
-#categories > #cats > ul > li.history {
-  margin: 10px;
-  width: 205px;
-  height: 205px;
-  background: url(../img/categories/history/history.jpg);
-  background-size: cover;
+  margin-right: 20px;
+  text-decoration: none;
   position: relative; }
 
-#categories > #cats > ul > li > a {
-  color: #FFF;
+#categories > #cats > ul > a > li.history {
   width: 205px;
   height: 205px;
-  padding: 0px 18px;
-  display: table-cell;
-  vertical-align: middle;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/categories/history/history.jpg);
+  background-size: cover; }
+
+#categories > #cats > ul > a > li {
+  color: #FFF;
+  padding: 0 18px;
   text-align: center;
-  background: rgba(132, 132, 132, 0.25);
   text-decoration: none;
   text-transform: uppercase;
-  font-family: fontForHeadersMed; }
+  font-family: fontForHeadersMed;
+  position: relative; }
 
-#categories > #cats > ul > li.economy {
-  margin: 10px;
+#categories > #cats > ul > a > li p {
+  position: absolute;
+  bottom: 40px;
+  right: 0;
+  left: 0; }
+
+#categories > #cats > ul > a > li.economy {
   width: 205px;
   height: 205px;
-  background: url(../img/categories/economy/economy.jpg);
-  background-size: cover;
-  position: relative; }
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/categories/economy/economy.jpg);
+  background-size: cover; }
 
 #category {
   clear: both;
@@ -352,13 +374,14 @@ a:active, a:hover {
 
 #category > #portada.history {
   height: 300px;
-  background: url(../img/categories/history/history.jpg) 0px -336px no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/categories/history/history.jpg) 0px -336px no-repeat;
   margin-bottom: 30px;
-  background-size: cover; }
+  background-size: cover;
+  position: relative; }
 
 #category > #portada.economy {
   height: 300px;
-  background: url(../img/categories/economy/economy.jpg) 0px -200px no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/categories/economy/economy.jpg) 0px -200px no-repeat;
   margin-bottom: 30px;
   background-size: cover; }
 
@@ -367,7 +390,37 @@ a:active, a:hover {
   font-size: 40px;
   font-weight: bold;
   padding: 60px 0px;
-  text-align: center; }
+  text-align: center;
+  position: relative; }
+
+#category > #portada > h1 > #icon-p-history {
+  width: 76px;
+  height: 64px;
+  background: url(../img/iconos-cats.png) 0 0 no-repeat;
+  background-size: 76px;
+  margin: auto !important;
+  vertical-align: middle;
+  left: 0;
+  right: 0;
+  display: inline-block; }
+
+#category > #portada > h1 > #icon-p-economy {
+  width: 76px;
+  height: 64px;
+  background: url(../img/iconos-cats.png) 0 -91px no-repeat;
+  background-size: 76px;
+  margin: auto !important;
+  vertical-align: middle;
+  left: 0;
+  right: 0;
+  display: inline-block; }
+
+#category > #portada > h1 > #text {
+  margin: auto !important;
+  vertical-align: middle;
+  left: 0;
+  right: 0;
+  display: inline-block; }
 
 #category > #portada > div {
   width: 600px;
@@ -380,19 +433,19 @@ a:active, a:hover {
   width: 70%;
   margin: 0 auto; }
 
-#category > #cats > h2 {
+#category > #cats > div > h2 {
   font-size: 30px;
   font-weight: bold;
   text-align: center;
   margin: 45px auto; }
 
-#category > #cats ul > li > div.imgcont-cat {
+#category > #cats > div ul > li > div.imgcont-cat {
   vertical-align: top;
   width: 300px;
   height: 200px;
   display: inline-block; }
 
-#category > #cats ul > li > div.imgcont-cat > a {
+#category > #cats > div ul > li > div.imgcont-cat > a {
   background: transparent;
   width: 100%;
   height: 100%; }
@@ -403,18 +456,18 @@ a:active, a:hover {
   height: 100%;
   background-position: -100px -100px; }
 
-#category > #cats > ul {
+#category > #cats > div > ul {
   width: 100%;
   margin: 0 auto; }
 
-#category > #cats > ul > li {
+#category > #cats > div > ul > li {
   text-align: center;
   font-weight: 700;
   list-style-type: none;
   padding: 10px 15px 15px;
   margin-bottom: 40px; }
 
-#category > #cats #info {
+#category > #cats > div #info {
   vertical-align: top;
   display: inline-block;
   text-align: left;
@@ -422,14 +475,19 @@ a:active, a:hover {
   margin-left: 15px;
   position: relative; }
 
-#category > #cats #info > h3 {
+#category > #cats > div #info > h3 {
   font-weight: bold;
-  font-family: fontForHeadersBol;
+  font-family: fontForHeadersMed;
   font-size: 16px;
   text-transform: uppercase;
-  width: 400px; }
+  width: 400px;
+  margin-bottom: 5px; }
 
-#category > #cats #info > h4 {
+#category > #cats > div #info > h3 > a:link, a:visited, a:hover, a:active {
+  color: #000;
+  text-decoration: none; }
+
+#category > #cats > div #info > h4 {
   font-weight: bold;
   font-family: fontForHeadersBol;
   color: #bdc3c7;
@@ -437,11 +495,11 @@ a:active, a:hover {
   text-transform: uppercase;
   width: 400px; }
 
-#category > #cats #info > .brief {
+#category > #cats > div #info > .brief {
   width: 400px;
   font-size: 16px; }
 
-#category > #cats .link {
+#category > #cats > div .link {
   border-top: 1px solid #bdc3c7;
   border-bottom: 1px solid #bdc3c7;
   padding: 5px 0;
@@ -451,10 +509,10 @@ a:active, a:hover {
   position: absolute;
   bottom: 0; }
 
-#category > #cats #info > .link > .time {
+#category > #cats > div #info > .link > .time {
   display: inline-block; }
 
-#category > #cats #info > .link > a {
+#category > #cats > div #info > .link > a {
   margin-right: 0px;
   right: 0px;
   float: right;
@@ -529,9 +587,14 @@ a:active, a:hover {
 
 #documentaries > #docs #info > h3 {
   font-weight: bold;
-  font-family: fontForHeadersBol;
-  font-size: 20px;
-  text-transform: uppercase; }
+  font-family: fontForHeadersMed;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 5px; }
+
+#documentaries > #docs #info > h3 > a:link, a:visited, a:hover, a:active {
+  color: #000;
+  text-decoration: none; }
 
 #documentaries > #docs #info > h4 {
   font-weight: bold;
@@ -623,7 +686,7 @@ a:active, a:hover {
   text-align: left;
   width: 400px;
   font-size: 16px;
-  font-family: fontForHeadersMed; }
+  font-family: fontForHeadersReg; }
 
 #documental > #content > .left > div > p p {
   width: 400px;
@@ -647,12 +710,11 @@ a:active, a:hover {
   display: block;
   text-align: center;
   width: 220px;
-  margin: 0 auto;
-  font-family: fontForHeadersBol; }
+  margin: 0 auto; }
 
 .active {
   color: #FFF !important;
-  background-color: #E6019A !important; }
+  background-color: #e52c20 !important; }
 
 .active a {
   color: #FFF !important; }
@@ -717,7 +779,7 @@ input[type="submit"] {
   -ms-border-radius: 4px; }
 
 #signup span {
-  color: #E6019A;
+  color: #e52c20;
   display: block;
   height: 30px;
   line-height: 40px;
@@ -726,7 +788,7 @@ input[type="submit"] {
   width: 36px; }
 
 #login span {
-  color: #E6019A;
+  color: #e52c20;
   display: block;
   height: 30px;
   line-height: 40px;
@@ -799,6 +861,117 @@ input[type="submit"] {
   width: 500px !important;
   height: 380px;
   margin: 0 auto; }
+
+.stares {
+  width: 61px;
+  height: 49px;
+  background: url(../img/Iconos-rojo.png) no-repeat;
+  background-size: 200px !important;
+  background-position-x: 0 !important;
+  background-position-y: -35px !important; }
+
+.questions {
+  width: 61px;
+  height: 49px;
+  background: url(../img/Iconos-rojo.png) no-repeat;
+  background-size: 200px;
+  background-position-x: -130px;
+  background-position-y: -35px; }
+
+#icon-history {
+  width: 76px;
+  height: 64px;
+  background: url(../img/iconos-cats.png) 0 0 no-repeat;
+  background-size: 76px;
+  margin: auto !important;
+  vertical-align: middle;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 35px; }
+
+#icon-economy {
+  width: 76px;
+  height: 68px;
+  background: url(../img/iconos-cats.png) 0 -91px no-repeat;
+  background-size: 76px;
+  margin: auto !important;
+  vertical-align: middle;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 35px; }
+
+#icon-documentaries {
+  width: 76px;
+  height: 64px;
+  background: url(../img/iconos2.png) no-repeat;
+  background-size: 270px;
+  background-position-x: -113px;
+  background-position-y: 0px;
+  margin: auto !important;
+  vertical-align: middle;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 35px; }
+
+/******************news ***************/
+#news > h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 60px auto;
+  text-align: center; }
+
+#news > div {
+  width: 100%;
+  margin: 0px auto;
+  margin-bottom: 60px;
+  font-size: 20px;
+  text-align: center; }
+
+#news > #newslist {
+  width: 800px; }
+
+#news > #newslist > ul {
+  width: 800px;
+  margin: 0 auto; }
+
+#news > #newslist > ul > a {
+  display: inline-block;
+  margin-right: 20px;
+  text-decoration: none;
+  position: relative; }
+
+#news > #newslist > ul > a > li.documentaries {
+  width: 205px;
+  height: 205px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/documentaries/doc_port.jpg);
+  background-size: cover; }
+
+#news > #newslist > ul > a > li {
+  color: #FFF;
+  padding: 0 18px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: fontForHeadersMed;
+  position: relative; }
+
+#news > #newslist > ul > a > li p {
+  position: absolute;
+  bottom: 40px;
+  right: 0;
+  left: 0; }
+
+#news > #newslist > ul > a > li.events {
+  width: 205px;
+  height: 205px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/categories/economy/economy.jpg);
+  background-size: cover; }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   #category > #portada.history {
@@ -917,6 +1090,12 @@ input[type="submit"] {
     width: 100%;
     margin: 0 auto; } }
 @media (max-width: 320px) {
+  #logo-resp {
+    display: block; }
+
+  #logo {
+    display: none; }
+
   #documentaries > #docs #info > h3 {
     font-weight: bold;
     font-family: fontForHeadersBol;
@@ -1110,6 +1289,12 @@ input[type="submit"] {
     width: 320px !important;
     margin: 0 auto; } }
 @media (max-device-width: 320px) {
+  #logo-resp {
+    display: block; }
+
+  #logo {
+    display: none; }
+
   #documentaries > #docs #info > h3 {
     font-weight: bold;
     font-family: fontForHeadersBol;
