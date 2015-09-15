@@ -1,0 +1,18 @@
+<div id="category" ui-view>
+  <categories-meta
+      id="category"
+      meta="meta"
+      category="category"></categories-meta>
+  <div id="loading" ng-hide="loadingIsDone"></div>
+  <div id="cats" ng-repeat="cate in categories">
+    <div>
+      <h2>{{cate.subTitle}}</h2>
+      <ul>
+        <li ng-repeat="c in cate.topics">
+          <category-item sectype="cats" data="c" category="category"></category-item>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <a href="#/categories" title="Categorías" class="btn-cats btn-primary">Ver todas las categorías</a>
+</div>

@@ -1,0 +1,21 @@
+<div id="documental">
+  <div class="img-doc">
+    <img src="build/assets/img/documentaries/doc{{doc.id}}/doc{{doc.id}}.png" alt="{{doc.title}}" width="640" height="230"/>
+  </div>
+  <div id="content">
+    <div class="left">
+      <h1>{{doc.title}}</h1>
+
+      <p>{{doc.data}}</p>
+      <br/>
+      <h3>Ver video</h3>
+      <youtube height="320" width="640" videoid="{{doc.videoId}}" type="{{doc.type}}"></youtube>
+      <h4>{{doc.credits}}</h4>
+    </div>
+    <div class="right">
+      <ul>
+        <li>{{doc.time}} Minutos</li>
+      </ul>
+    </div>
+  </div>
+</div>

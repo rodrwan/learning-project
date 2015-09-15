@@ -1,0 +1,16 @@
+<div id="categories" ui-view>
+  <h1>Contenido</h1>
+  <div>Elige una categoria para explorar los cursos que podrás estudiar, o ver los
+cursos que vienen.</div>
+  <div id="cats">
+    <ul>
+      <a ng-repeat="cat in categories" href="#/categories/{{cat.id}}" title="{{cat.title}}">
+        <li  class="{{cat.id}}">
+          <div id="icon-{{cat.id}}"></div>
+          <p>{{cat.title}}</p>
+        </li>
+      </a>
+    </ul>
+  </div>
+  <div id="loading" ng-hide="loadingIsDone"></div>
+</div>

@@ -1,0 +1,44 @@
+<div class="imgcont-cat">
+  <a
+      ng-show="section == 'categories'"
+      href="#/{{sectype}}/{{category}}/{{data.id}}"
+      title="{{data.title}}"
+      class="btn-cats btn-primary">
+    <img src="build/assets/img/{{section}}/{{data.thumbnail}}" alt="{{data.title}}"/>
+  </a>
+  <a
+      ng-show="section == 'documentaries'"
+      href="#/{{sectype}}/{{data.id}}"
+      title="{{data.title}}"
+      class="btn-cats btn-primary">
+    <img src="build/assets/img/{{section}}/{{data.thumbnail}}" alt="{{data.title}}"/>
+  </a>
+</div>
+<div id="info">
+  <h3>
+    <a
+        ng-show="section == 'categories'"
+        href="#/{{section}}/{{category}}/{{data.id}}"
+        title="{{data.title}}">{{data.title}}</a>
+    <a
+        ng-show="section == 'documentaries'"
+        href="#/{{section}}/{{data.id}}"
+        title="{{data.title}}">{{data.title}}</a>
+  </h3>
+  <h4>{{data.subTitle}}</h4>
+  <br/>
+  <p class="brief">{{data.brief}}</p>
+  <div class="link">
+    <p class="time">{{data.time}} Minutos</p>
+    <a
+        ng-show="section == 'categories'"
+        href="#/{{section}}/{{category}}/{{data.id}}"
+        title="{{data.title}}"
+        class="btn-cats btn-primary">Más</a>
+    <a
+        ng-show="section == 'documentaries'"
+        href="#/{{section}}/{{data.id}}"
+        title="{{data.title}}"
+        class="btn-cats btn-primary">Más</a>
+  </div>
+</div>

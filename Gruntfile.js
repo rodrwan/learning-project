@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
@@ -27,13 +27,14 @@ module.exports = function(grunt) {
       },
       dist: {
         src: [
-          '<%= meta.srcPathJs %>app.js',
-          '<%= meta.srcPathJs %>home/home.js',
-          '<%= meta.srcPathJs %>login/login.js',
-          '<%= meta.srcPathJs %>categories/categories.js',
-          '<%= meta.srcPathJs %>documentaries/documentaries.js',
-          '<%= meta.srcPathJs %>signup/signup.js',
-          '<%= meta.srcPathJs %>news/news.js'
+          '<%= meta.srcPathJs %>app.mdl.js',
+          '<%= meta.srcPathJs %>app.ctl.js',
+          '<%= meta.srcPathJs %>routes/**/*.mdl.js',
+          '<%= meta.srcPathJs %>routes/**/*.ctl.js',
+          '<%= meta.srcPathJs %>services/**/*.mdl.js',
+          '<%= meta.srcPathJs %>services/**/*.svc.js',
+          '<%= meta.srcPathJs %>directives/**/*.js'
+
         ],
         dest: '<%= meta.buildApp %><%= pkg.name %>.js'
       }
@@ -51,18 +52,39 @@ module.exports = function(grunt) {
     },
 
     sass: {
+      // dist: {
+      //   files: {
+      //     '<%= meta.deployPath %>css/style.css': '<%= meta.srcPathCss %>style.scss',
+      //     '<%= meta.deployPath %>css/reset.css': '<%= meta.srcPathCss %>reset.scss'
+      //   }
+      // }
       dist: {
-        files: {
-          '<%= meta.deployPath %>css/style.css': '<%= meta.srcPathCss %>style.scss',
-          '<%= meta.deployPath %>css/reset.css': '<%= meta.srcPathCss %>reset.scss'
-        }
+        files: [{
+          expand: true,
+          src: [
+            '<%= meta.srcPathCss %>*.scss',
+            '<%= meta.srcPathJs %>directives/**/*.scss'
+          ],
+          dest: '.tmp/<%= meta.deployPath %>css/',
+          ext: '.css'
+        }]
+      }
+    },
+
+    concat_css: {
+      options: {
+        // Task-specific options go here.
+      },
+      all: {
+        src: ['.tmp/<%= meta.deployPath %>/css/**/*.css'],
+        dest: '<%= meta.deployPath %>css/style.css'
       }
     },
 
     cssmin: {
       build: {
         files: {
-          '<%= meta.deployPath %>css/style.min.css': '<%= meta.deployPath %>css/style.css',
+          '<%= meta.deployPath %>css/styles.min.css': '<%= meta.deployPath %>css/style.css',
           '<%= meta.deployPath %>css/reset.min.css': '<%= meta.deployPath %>css/reset.css'
         }
       }
@@ -80,24 +102,35 @@ module.exports = function(grunt) {
 
     copy: {
       dist: {
-        files: [
-          {
+        files: [{
             dest: '<%= meta.copyHtml %>',
             src: [
-              '**/home/home.html',
-              '**/login/login.html',
-              '**/categories/categories.html',
-              '**/categories/category_list.html',
-              '**/categories/resource.html',
-              '**/documentaries/documentaries.html',
-              '**/documentaries/documental.html',
-              '**/signup/signup.html',
-              '**/news/news.html'
+              'routes/**/*.html',
+              'directives/**/*.html'
             ],
-            cwd: '<%= meta.srcPathJs %>',
+            cwd: 'src/app/',
             expand: true
-          }
-        ]
+        }]
+      }
+    },
+
+    clean: ['.tmp'],
+
+    wiredep: {
+      task: {
+
+        // Point to the files that should be updated when
+        // you run `grunt wiredep`
+        src: [
+          'index.html'   // .html support...
+        ],
+
+        options: {
+          // See wiredep's configuration documentation for the options
+          // you may pass:
+
+          // https://github.com/taptapship/wiredep#configuration
+        }
       }
     },
 
@@ -123,19 +156,25 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-concat-css');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-ng-annotate');
+  grunt.loadNpmTasks('grunt-wiredep');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   grunt.registerTask('build', [
     'sass',
+    'concat_css',
     'cssmin',
+    'clean',
     'concat',
     'ngAnnotate',
     'uglify',
     'copy',
-    'watch'
+    'wiredep'
+    // 'watch'
   ]);
   // Default task.
   grunt.registerTask('default', [

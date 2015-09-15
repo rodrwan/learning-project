@@ -1,4 +1,12 @@
 {
+  "env": {
+    "browser": true,
+    "jquery": true,
+    "node": true
+  },
+  "globals": {
+    "angular": 1
+  },
   "rules": {
     "quotes": [2, "single"],
     "one-var": 1,
@@ -22,10 +30,5 @@
     "spaced-line-comment": [1, "always"],
     "func-style": [2, "declaration"],
     "quote-props": [2, "as-needed"]
-  },
-  "env": {
-    "browser": true,
-    "jquery": true,
-    "node": true
   }
 }
