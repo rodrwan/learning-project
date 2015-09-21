@@ -2,7 +2,7 @@
 
 $default-bg: #FFF;
 $btn-color: rgb(229, 44, 32); /*#E6019A;*/
-$btn-color-hover: rgba(233, 84, 41, .9);/*#BA007C;*/
+$btn-color-hover: rgba(233, 84, 41, .9); /*#BA007C;*/
 $default-letter: #000;
 $btn-letter: #FFF;
 $grey: #E6E6E6;
@@ -123,22 +123,10 @@ a:active,a:hover {
   margin-left: auto !important;
   margin-right: auto !important;
 }
-/**** pre-header ****/
-
-#pre-header {
-  width: 100%;
-  height: 60px;
-  padding-top: 20px;
-  padding-bottom: 60px;
-  border-bottom: 1px solid $border-color;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
 /**** header ****/
 
 #header {
-  width: 100%;
+  width: 1000px;
   height: 400px;
   padding-top: 30px !important;
 }
@@ -158,24 +146,38 @@ a:active,a:hover {
   background-size: cover;
 }
 #wrapper {
-  min-height: 100%;
-  position: relative;
+    min-height: 100%;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    margin-top: 20px;
 }
 /**** main ***/
 #main {
-  padding-bottom: 200px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  min-height: 500px;
+  margin-bottom: 50px;
 }
+
+/**** pre-header ****/
+
+#pre-header {
+    width: 1000px;
+    height: 240px;
+    margin: auto!important;
+    position: relative;
+}
+
 /*** logo ***/
 
 #logo {
-  width: 100%;
-  border: 0 solid;
-  background: url(../img/Logo2.png) no-repeat;
-  position: absolute;
-  background-size: 25% !important;
-  height: 81px;
-  top: 10px;
-  left: 100px;
+    width: 25%;
+    background: url(../img/logo-01.jpg) no-repeat;
+    background-size: 100%;
+    height: 230px;
+    position: absolute;
 }
 
 #logo-resp {
@@ -192,8 +194,9 @@ a:active,a:hover {
 
 /**** main-menu ****/
 #main-menu {
-  width: 100%;
-  border: 0px solid green;
+  position: absolute;
+  bottom: 40px;
+  right: 0;
 }
 
 #main-menu > ul {
@@ -204,21 +207,25 @@ a:active,a:hover {
 }
 
 #main-menu > ul > li {
-  width: 120px;
+  width: 100px;
   text-align: center;
-  font-weight: bold;
   list-style-type: none;
-  padding: 5px 10px 10px;
   -webkit-transition: all .3s ease-in;
   -moz-transition: all .3s ease-in;
   -o-transition: all .3s ease-in;
   display: inline-block;
   margin-right: -4px;
   position: relative;
+  border: 1px solid #ccc;
+  background-color: #F7F7F7;
+  height: 40px;
+  vertical-align: top;
+  padding: 15px 5px 5px 5px;
 }
 
 #main-menu > ul > li a {
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 #main-menu > ul > li a:link, a:visited, a:active {
@@ -226,63 +233,44 @@ a:active,a:hover {
 }
 
 #main-menu > ul > li a {
-  font-size: 14px;
+  font-size: 12px;
   -webkit-transition: all 0.1s ease-in;
   -moz-transition: all 0.1s ease-in;
   -o-transition: all 0.1s ease-in;
   text-decoration: none;
   font-family: fontForHeadersMed;
+  display: inherit;
+  vertical-align: middle;
 }
 
 #main-menu > ul > li:hover {
-  background: $btn-color;
-  color: $btn-letter;
+  background: #FFF;
 }
 
 #main-menu > ul > li:hover a {
-  color: $btn-letter;
+  color: #e52c20;
   text-decoration: none;
 }
-#main-menu > ul ul {
-  display:none;
-  position:absolute;
-  top:100%;
-  left:0;
-  background:#fff;
-  padding:0;
-  z-index: 1000;
+.facebook:hover {
+  background-color: #3a5795 !important;
 }
-#main-menu > ul ul li {
-  float:none;
-  width:200px;
+.facebook:hover > a {
+  color: #FFF !important;
 }
-#main-menu > ul > li:hover > ul {
-  display: block;
-  color: $default-letter !important;
+.instagram:hover {
+  background-color: #342020 !important;
 }
-#main-menu > ul > li:hover > ul li {
-  display: block;
-  padding: 5px 10px 10px;
-}
-#main-menu > ul > li:hover > ul li a {
-  color: $default-letter !important;
-}
-#main-menu > ul > li > ul li:hover {
-  background: $btn-color;
-}
-#main-menu > ul > li > ul li a {
-  -webkit-transition: all 0.1s ease-in;
-  -moz-transition: all 0.1s ease-in;
-  -o-transition: all 0.1s ease-in;
-}
-#main-menu > ul > li > ul li:hover a {
-  color: $btn-letter !important;
+.instagram:hover > a{
+  color: #FFF !important;
 }
 /**** user ****/
 
 #user {
   width: 25%;
   border: 0px solid red;
+  right: 0;
+  position: absolute;
+  z-index: 1000;
 }
 
 #user > ul {
@@ -317,28 +305,39 @@ a:active,a:hover {
 }
 
 .navigation li a {
-  font-size: 14px;
+  font-size: 12px;
   -webkit-transition: all 0.1s ease-in;
   -moz-transition: all 0.1s ease-in;
   -o-transition: all 0.1s ease-in;
   text-decoration: none;
   font-family: fontForHeadersMed;
+  text-transform: uppercase;
+  color: #e52c20 !important;
 }
 
-.navigation li:hover {
-  background: $btn-color;
-  color: $btn-letter;
-}
-
-.navigation li:hover a {
-  color: $btn-letter;
-  text-decoration: none;
+.navigation li a:hover {
+  color: $default-letter !important;
 }
 
 .navigation li.separator {
   max-width: 500px;
 }
+/** left-panel **/
+#left-panel {
+  width: 745px;
+  min-height: 600px;
+  display: inline-block;
+  vertical-align: top;
+}
 
+/** right-panel **/
+#right-panel {
+  top: 0;
+  right: 0;
+  width: 250px;
+  min-height: 600px;
+  display: inline-block;
+}
 /*** inside ***/
 
 #inside {
@@ -403,14 +402,31 @@ a:active,a:hover {
 }
 
 #footer {
-  background-color: $deep-grey;
   width: 100%;
-  height: 200px;
-  position: absolute;
+  height: 150px;
+  position: relative;
   bottom: 0;
   left: 0;
 }
+#footer a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
 
+.block-footer {
+    width: 350px;
+    border-top: 1px solid #ccc;
+    display: inline-block;
+    margin-right: 25px;
+    text-transform: uppercase;
+    font-size: 12px;
+    vertical-align: top;
+}
+.block-footer h2 {
+  font-weigth: bold;
+  font-family: fontForHeadersBol;
+}
 /***** login section *****/
 .bg-login {
   height: 500px;
@@ -1176,6 +1192,76 @@ input[type="submit"] {
   height: 205px;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/categories/economy/economy.jpg);
   background-size: cover;
+}
+
+
+.icon-fb {
+    width: 17px;
+    height: 20px;
+    background: url(../img/iconos.jpg) no-repeat;
+    vertical-align: middle;
+    display: inline-block;
+    background-position-x: -258px !important;
+    background-position-y: -32px !important;
+    margin-right: 10px;
+}
+.icon-ig {
+    width: 17px;
+    height: 20px;
+    background: url(../img/iconos.jpg) no-repeat;
+    vertical-align: middle;
+    display: inline-block;
+    background-position-x: -258px !important;
+    background-position-y: -51px !important;
+    margin-right: 10px;
+}
+
+.imgcont-home {
+    vertical-align:top;
+    width: 230px;
+    height: 170px;
+    display: inline-block;
+}
+
+.imgcont-home > a {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+}
+.imgcont-home > a:hover {
+  background: transparent;
+}
+.imgcont-home img {
+    width: 100%;
+    height: 100%;
+    background-position: -100px -100px;
+    margin-left: -15px;
+}
+
+#body-home {
+  padding: 20px 15px;
+  font-size: 15px;
+}
+
+#body-home > h1 {
+  font-size: 16px;
+  color:#F36F49;
+  font-family: fontForHeadersBol;
+}
+
+#body-home > p {
+  font-size: 14px;
+}
+
+#footer-home .button-home-more {
+    border: 0;
+    border-top: 1px solid #CCC;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    background-color: #F7F7F7;
 }
 
 @media (max-device-width:768px) {

@@ -25,7 +25,7 @@
   <script src="bower_components/restangular/dist/restangular.js"></script>
   <!-- endbower -->
 
-  <script src="/build/app/learn-app.min.js"></script>
+  <script src="/build/app/learn-app.js"></script>
   <script type="text/javascript">
     $(document).ready(function () {
       if ($(window).width() <= 500) {
@@ -60,36 +60,31 @@
     <div id="responsive-menu" class="fontawesome-align-justify">
       <div id="logo-resp"></div>
     </div>
-    <div id="pre-header" class="row center-xs end-xs">
-      <div id="logo" class="col-xs-2"></div>
-      <div id="main-menu" class="col-xs-8">
-        <ul>
-          <li><a ui-sref="home()" title="Inicio">Inicio</a></li>
-          <li>
-            <a href="#/categories" title="Contenido">Contenido</a>
-            <ul>
-              <li><a href="#/categories/history">Historía y Teoría</a></li>
-              <li><a href="#/categories/economy">Economía y Gestión</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#/news" title="Novedades">Novedades</a>
-            <ul>
-              <li><a href="#/documentaries">Documentales</a></li>
-            </ul>
-          </li>
-          <li><a href="#/about" title="Nosotros">Nosotros</a></li>
-        </ul>
-      </div>
-      <div id="user" class="col-xs-2">
+    <div id="pre-header">
+      <div id="user">
         <ul class="navigation" ng-hide="$root.login">
-          <li><a ui-sref="login()" title="Entrar">Entrar</a></li>
-          <li class="active"><a href="#/signup" title="Registrarse">Registrarse</a></li>
+          <li><a ui-sref="login()" title="Entrar">Entrar</a>&nbsp;/&nbsp;<a href="#/signup" title="Registrarse">Registrarse</a></li>
         </ul>
 
         <ul class="navigation" ng-show="$root.login">
           <li><a href="#/profile" title="Perfil">{{$root.username}}</a></li>
-          <li class="active"><a ng-click="logout()" title="Salir">Salir</a></li>
+          <li><a ng-click="logout()" title="Salir">Salir</a></li>
+        </ul>
+      </div>
+      <div id="logo"></div>
+      <div id="main-menu">
+        <ul>
+          <li><a ui-sref="home()" title="Inicio">Inicio</a></li>
+          <li><a href="#/categories/history">Historía<br/>y Teoría</a></li>
+          <li><a href="#/categories/economy">Economía<br/>y Gestión</a></li>
+          <li><a href="#/documentaries">Documentales</a></li>
+          <li><a href="#/exposition">Exposiciones</a></li>
+          <li class="facebook">
+            <a href="https://www.facebook.com/picnicgrafico" target="_blank" title="Facebook">Facebook</a>
+          </li>
+          <li class="instagram">
+            <a href="http://instagram.com/picnic.grafico" target="_blank" title="Instagram">Instagram</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -97,8 +92,23 @@
     <div id="main" ui-view></div>
 
     <div id="footer">
+      <ul style="width: 1000px; margin: auto">
+        <li class="block-footer">
+          <h2>Contacto</h2>
+          <br/>
+          Info picnic: info@picnicgrafico.com<br/>
+          Naomi Madariaga: nao.madariaga@picnicgrafico.com<br/>
+          Claudia Hernandez: clau.hernandez@picnicgrafico.com<br/>
+          Fernanda diaz: fer.diaz@picnicgrafico.com<br/>
+        </li>
+        <li class="block-footer">
+          <h2>Siguenos</h2>
+          <br/>
+          <i class="icon-fb"></i><a href="http://www.facebook.com/picnicgrafico" title="Facebook">http://www.facebook.com/picnicgrafico</a><br/>
+          <i class="icon-ig"></i><a href="http://instagram.com/picnic.grafico" title="Instagram">@picnic.grafico</a>
+        </li>
+      </ul>
     </div>
   </div>
-  <script src="http://localhost:35729/livereload.js"></script>
 </body>
 </html>

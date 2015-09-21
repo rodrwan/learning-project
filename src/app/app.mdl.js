@@ -19,8 +19,8 @@
     $urlRouterProvider.otherwise('/home');
     $stateProvider.state('main', {
       url: '/',
-      controller: 'Apptrl',
-      templateUrl: ''
+      controller: 'AppCtrl',
+      templateUrl: 'build/html/routes/home/home.html'
     });
     angular.extend(CacheFactoryProvider.defaults, {maxAge: 15 * 60 * 1000});
     RestangularProvider.setBaseUrl(API_URL);
@@ -51,6 +51,6 @@
   });
 
   // app.constant('API_URL', 'http://learn-app.herokuapp.com/api');
-  app.constant('API_URL', 'http://api.picnicgrafico.com/api');
-  // app.constant('API_URL', 'http://localhost:8080/api');
+  // app.constant('API_URL', 'http://api.picnicgrafico.com/api');
+  app.constant('API_URL', 'http://localhost:8080/api');
 })();

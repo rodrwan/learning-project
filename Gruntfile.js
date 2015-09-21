@@ -174,7 +174,6 @@ module.exports = function (grunt) {
     'uglify',
     'copy',
     'wiredep'
-    // 'watch'
   ]);
   // Default task.
   grunt.registerTask('default', [

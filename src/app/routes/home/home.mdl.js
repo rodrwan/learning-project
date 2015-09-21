@@ -3,7 +3,8 @@
 
   angular.module('learnApp.home', [
     'ui.router',
-    'angular-storage'
+    'angular-storage',
+    'learnApp.svc.randomArticles'
   ])
 
   .config(function ($stateProvider) {

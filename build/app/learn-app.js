@@ -19,8 +19,8 @@
     $urlRouterProvider.otherwise('/home');
     $stateProvider.state('main', {
       url: '/',
-      controller: 'Apptrl',
-      templateUrl: ''
+      controller: 'AppCtrl',
+      templateUrl: 'build/html/routes/home/home.html'
     });
     angular.extend(CacheFactoryProvider.defaults, {maxAge: 15 * 60 * 1000});
     RestangularProvider.setBaseUrl(API_URL);
@@ -51,8 +51,8 @@
   }]);
 
   // app.constant('API_URL', 'http://learn-app.herokuapp.com/api');
-  app.constant('API_URL', 'http://api.picnicgrafico.com/api');
-  // app.constant('API_URL', 'http://localhost:8080/api');
+  // app.constant('API_URL', 'http://api.picnicgrafico.com/api');
+  app.constant('API_URL', 'http://localhost:8080/api');
 })();
 
 (function () {
@@ -178,7 +178,8 @@
 
   angular.module('learnApp.home', [
     'ui.router',
-    'angular-storage'
+    'angular-storage',
+    'learnApp.svc.randomArticles'
   ])
 
   .config(["$stateProvider", function ($stateProvider) {
@@ -410,9 +411,11 @@
 
   angular.module('learnApp.home')
 
-  .controller('HomeCtrl', function HomeController () {
-
-  });
+  .controller('HomeCtrl', ["$scope", "RandomArticles", function ($scope, RandomArticles) {
+    RandomArticles.getList().then(function (articles) {
+      $scope.articles = articles;
+    });
+  }]);
 })();
 
 (function () {
@@ -497,6 +500,13 @@
   'use strict';
 
   angular.module('learnApp.svc.login', []);
+
+})();
+
+(function () {
+  'use strict';
+
+  angular.module('learnApp.svc.randomArticles', []);
 
 })();
 
@@ -658,6 +668,16 @@
     return {
       login: login
     };
+  }]);
+})();
+
+(function () {
+  'use strict';
+
+  angular.module('learnApp.svc.randomArticles')
+
+  .factory('RandomArticles', ["Restangular", function (Restangular) {
+    return Restangular.service('latest');
   }]);
 })();
 

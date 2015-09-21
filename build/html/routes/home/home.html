@@ -1,36 +1,31 @@
-<section id="header" class="page-section">
-  <div class="inner-header">
-    <!-- <h1>Qué te gustaría aprender?</h1>
-    <a href="#/categories" title="Categorías" class="btn-cats btn-primary" role="button">Ir a las categorías</a> -->
-  </div>
+<div style="width: 1000px; margin: auto; position: relative">
+<section id="left-panel">
+  <ul>
+    <li ng-repeat="article in articles" style="width:230px; height: 360px; border:1px solid #ccc; display: inline-block; margin-right: 15px;margin-bottom: 20px; vertical-align: top; position: relative">
+      <div class="imgcont-home">
+        <a
+          href="#/{{article.sectype}}/{{article.category_id}}/{{article.sub_category_id}}"
+          title="{{article.title}}"
+          class="btn-cats btn-primary">
+          <img src="build/assets/img/{{article.sectype}}/{{article.thumbnail}}" alt="{{article.title}}"/>
+        </a>
+      </div>
+      <div id="body-home">
+        <h1>{{article.title}}</h1>
+        en: <span style="color:#e52c20">{{article.sub_category_name}}</span>
+        <br/><br/>
+        <p>{{article.brief}}</p>
+      </div>
+      <div id="footer-home">
+        <a href="#/{{article.sectype}}/{{article.category_id}}/{{article.sub_category_id}}"
+          title="{{article.title}}"><button class="button-home-more">Ver más</button></a>
+      </div>
+    </li>
+  <ul>
 </section>
 
-<section id="inside" class="page-section">
-    <div>Picnic busca dejar a disposición del estudiante documentos para el aprendizaje y desarrollo de un buen diseñador.</div><br/>
-    <a ui-sref="login()" title="Entrar">Entrar ahora</a>
+<section id="right-panel">
+<img src="/build/assets/img/Afiche_mapa-01.jpg" width="250" /><br/><br/>
+<img src="/build/assets/img/Afiche_manzana-01.jpg" width="250" />
 </section>
-
-<section class="page-section">
-  <!-- <div class="row  center-xs why-header">
-    <h1 class="col-xs-12">Por qué Picnic?</h1>
-  </div>
-  <div class="row center-xs">
-    <section id="info-box" class="col-xs">
-      <div class="stares"></div>
-      <h1>Aprende de todo</h1>
-      <div>Elige la materia que necesites de forma gratuita. Historia y teoría, economía y gestión y pronto nuevas categorías sobre diseño.</div>
-      <a href="categories" title="Categorías">Ver las categorías</a>
-    </section>
-    <section id="info-box" class="col-xs">
-      <div class="questions"></div>
-      <h1>Aprendamos juntos</h1>
-      <div>Puedes comentar los videos con otros estudiantes y expertos del diseño, es muy fácil para compartir en redes sociales y con tus amigos.</div>
-      <a href="about" title="Cómo funciona?">Ver como funciona</a>
-    </section>
-    <section id="info-box" class="col-xs">
-      <h1>Aprende de expertos</h1>
-      <div>Conoce diferentes profesionales y estudiantes, quienes están interesados en compartir videos y experiencias.</div>
-      <a href="register" title="Registrate">Registrate y comenta</a>
-    </section>
-  </div> -->
-</section>
+</div>
