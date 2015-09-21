@@ -178,6 +178,7 @@ a:active,a:hover {
     background-size: 100%;
     height: 230px;
     position: absolute;
+    margin-left: -30px;
 }
 
 #logo-resp {
@@ -1198,7 +1199,7 @@ input[type="submit"] {
 .icon-fb {
     width: 17px;
     height: 20px;
-    background: url(../img/iconos.jpg) no-repeat;
+    background: url(../img/Iconos.jpg) no-repeat;
     vertical-align: middle;
     display: inline-block;
     background-position-x: -258px !important;
@@ -1208,7 +1209,7 @@ input[type="submit"] {
 .icon-ig {
     width: 17px;
     height: 20px;
-    background: url(../img/iconos.jpg) no-repeat;
+    background: url(../img/Iconos.jpg) no-repeat;
     vertical-align: middle;
     display: inline-block;
     background-position-x: -258px !important;
@@ -1262,6 +1263,9 @@ input[type="submit"] {
     height: 40px;
     position: absolute;
     background-color: #F7F7F7;
+    cursor: pointer;
+    font-family: fontForHeadersBol;
+    font-size: 14px;
 }
 
 @media (max-device-width:768px) {

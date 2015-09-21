@@ -51,8 +51,8 @@
   }]);
 
   // app.constant('API_URL', 'http://learn-app.herokuapp.com/api');
-  // app.constant('API_URL', 'http://api.picnicgrafico.com/api');
-  app.constant('API_URL', 'http://localhost:8080/api');
+  app.constant('API_URL', 'http://api.picnicgrafico.com/api');
+  // app.constant('API_URL', 'http://localhost:8080/api');
 })();
 
 (function () {
